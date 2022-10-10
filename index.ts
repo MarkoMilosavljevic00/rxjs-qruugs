@@ -12,15 +12,16 @@ let timerOb$ = interval(1000);
 // });
 
 let button = document.body.querySelector("button");
-let buttonOb$ = fromEvent(button, "click").pipe(
-  switchMap(() => timerOb$)
-).subscribe(console.log);
+let buttonOb$ = fromEvent(button, "click");
+buttonOb$.subscribe(() => console.log("samo dugme"));
+// .pipe(
+//   switchMap(() => timerOb$)
+// ).subscribe(console.log);
 
-buttonOb$.unsubscribe();
 
-// combineLatest(buttonOb$,timerOb$).subscribe(data => {
-//   console.log(data)
-// })
+combineLatest(buttonOb$,timerOb$).subscribe(data => {
+  console.log(data)
+})
 
 // let a = Math.floor(Math.random()*10000) + 2000;
 // console.log(a);
