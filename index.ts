@@ -19,7 +19,7 @@ buttonOb$.subscribe(() => console.log("samo dugme"));
 // ).subscribe(console.log);
 
 
-combineLatest(buttonOb$,timerOb$).subscribe(data => {
+combineLatest(timerOb$,buttonOb$).subscribe(data => {
   console.log(data)
 })
 
