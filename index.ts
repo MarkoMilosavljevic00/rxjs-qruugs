@@ -35,28 +35,11 @@ export function getRandomObjectFrom(percents: number[], ...objects: any[]): any 
   let objekatVr;
 
   objects.forEach((objekat, index) => {
-    console.log("prvo stampanje", objekat);
     currentPercent = nextPercent;
     nextPercent += percents[index];
-    console.log(currentPercent, nextPercent);
     if(drawnNumber > currentPercent && drawnNumber <= nextPercent){
       objekatVr = objekat;
-    }else if(drawnNumber > nextPercent){
     }
-    // if(index === 0){
-    //   if(drawnNumber > 0 && drawnNumber <= percents[index]){
-    //     console.log("prvi")
-    //     return object;
-    //   }
-    // }else{
-    //   console.log(drawnNumber > percents[index-1])
-    //   console.log(percents[index])
-
-    //   if(drawnNumber > percents[index-1] && drawnNumber <= percents[index]){
-    //     console.log("drugi")
-    //     return object;
-    //   }
-    // }
   });
 
   return objekatVr;
@@ -64,9 +47,10 @@ export function getRandomObjectFrom(percents: number[], ...objects: any[]): any 
 
 let nesto = new Objekat(1, "nesto");
 let nista = new Objekat(2, "nista");
+let ono = new Objekat(3, "nanana")
 
 
-console.log(getRandomObjectFrom([50,50, 50asda], nesto, nista))
+console.log(getRandomObjectFrom([50,50,500], nesto, nista, ono))
 
 // let a = Math.floor(Math.random()*10000) + 2000;
 // console.log(a);
