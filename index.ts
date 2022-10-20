@@ -50,7 +50,9 @@ let nista = new Objekat(2, "nista");
 let ono = new Objekat(3, "nanana")
 
 
-console.log(getRandomObjectFrom([50,50,500], nesto, nista, ono))
+console.log(getRandomObjectFrom([50,50,500], nesto, nista, ono));
+
+console.log(Math.floor(Math.random() * (50 - 40) + 40));
 
 // let a = Math.floor(Math.random()*10000) + 2000;
 // console.log(a);
